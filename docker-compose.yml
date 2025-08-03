@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  notification-system:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: event-notification-system
+    ports:
+      - "8080:5000"  # Map external port 8080 to internal port 5000
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - JAVA_OPTS=-Xms512m -Xmx1024m
+    volumes:
+      - ./logs:/app/logs
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    networks:
+      - notification-network
+
+networks:
+  notification-network:
+    driver: bridge
+
+volumes:
+  logs:
+    driver: local

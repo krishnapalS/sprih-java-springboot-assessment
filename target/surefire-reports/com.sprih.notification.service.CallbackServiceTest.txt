@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.sprih.notification.service.CallbackServiceTest
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.585 s - in com.sprih.notification.service.CallbackServiceTest
