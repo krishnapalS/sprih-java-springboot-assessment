@@ -35,7 +35,7 @@ The API will be available at: `http://localhost:8080/api/events`
 ### Running Locally
 ```bash
 # Clone the repository
-git clone <your-repository-url>
+git clone https://github.com/krishnapalS/sprih-java-springboot-assessment.git
 cd event-notification-system
 
 # Run tests
